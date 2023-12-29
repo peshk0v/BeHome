@@ -7,8 +7,8 @@ users = ["test"]
 passwords = ["1234"]
 
 [device]
-arduinoPort = "/dev/ttyUSB1"
+arduinoPort = "/dev/ttyUSB0"
 
 [output]
-names = ["Свет гостинная", "Чайник", "Настольная лампа", "Миксер"]
+names = ["Название1", "Название2", "Название3", "Название4"]
 pins = [2,3,4,5]
