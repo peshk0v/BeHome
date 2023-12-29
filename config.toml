@@ -1,0 +1,14 @@
+[app]
+name = "BeHome"
+version = 1.0
+
+[guard]
+users = ["test"]
+passwords = ["1234"]
+
+[device]
+arduinoPort = "/dev/ttyUSB1"
+
+[output]
+names = ["Свет гостинная", "Чайник", "Настольная лампа", "Миксер"]
+pins = [2,3,4,5]
