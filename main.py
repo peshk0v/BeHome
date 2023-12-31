@@ -1,8 +1,9 @@
-import cmdinterface as ci 
+import myhelp.filework as mf
+import myhelp.interface as mi
 import pyfirmata2 as pyfirmata
 from flask import Flask
 
-sett = ci.load("config.toml", 1)
+sett = mf.load("config.toml", 1)
 app = Flask(__name__)
 board = pyfirmata.Arduino(sett["device"]["arduinoPort"])
 
@@ -11,6 +12,8 @@ if len(sett["guard"]["users"]) == len(sett["guard"]["passwords"]):
 else:
     print("GUARD ERROR")
     exit()
+
+mi.aprint(sett["app"]["name"])
 
 @app.route('/')
 def tryed():
