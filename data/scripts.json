@@ -1,0 +1,9 @@
+[
+    {
+        "name":"night",
+        "type":"on time",
+        "timeToON":[20, 53],
+        "timeToOFF":[2, 33],
+        "outdToWrite":["Название2"]
+    }
+]

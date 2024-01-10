@@ -1,0 +1,19 @@
+[app]
+name = "BeHome"
+version = 1.1
+
+[userData]
+city = "Volgograd"
+openmapKey = "6db68a629b177edfb6bab4454c66e090"
+openmapUrl = "http://api.openweathermap.org/data/2.5/weather"
+
+[path]
+curentPath = "C:\\Users\\Administrator\\Documents\\progrects\\BeHome"
+bgImagePath = "\\data\\bg.jpg"
+
+[device]
+arduinoPort = "COM3"
+
+[output]
+names = ["Название1", "Название2", "Название3", "Название4"]
+pins = [2,3,4,5]

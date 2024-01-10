@@ -6,7 +6,7 @@ def load(filename, mode):
     if mode == 1:
         return tomllib.load(open(filename, "rb"))
     elif mode == 2:
-        return json.load(open(filename, "r"))
+        return json.load(open(filename, "r", encoding="utf8"))
     else:
         return False
 
@@ -25,3 +25,8 @@ def fWrite(fileName, text):
     with open(fileName, "w") as f:
         f.write(text)
 
+def mkdir(path):
+    os.mkdir(path)
+
+def mkfile(path):
+    os.system(f"echo 0>{path}")
