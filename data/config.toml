@@ -12,7 +12,7 @@ curentPath = "C:\\Users\\Administrator\\Documents\\progrects\\BeHome"
 bgImagePath = "\\data\\bg.jpg"
 
 [device]
-arduinoPort = "COM3"
+arduinoPort = "/dev/ttyUSB0"
 
 [output]
 names = ["Название1", "Название2", "Название3", "Название4"]

@@ -6,15 +6,22 @@ import requests
 from datetime import date, datetime
 from random import randint
 
-try: open("data\\users.json").close()
+sys = input("OS [WIN|LIN] > ")
+
+if sys == "WIN":
+    slash = "\\"
+else:
+    slash = "/"
+
+try: open(f"data{slash}users.json").close()
 except FileNotFoundError:
     tempPass = randint(0,1000)
-    mf.jsDump("data\\users.json", [{"name":"admin", "pass":f"{tempPass}"}])
+    mf.jsDump(f"data{slash}users.json", [{"name":"admin", "pass":f"{tempPass}"}])
     print(f"Welcome to BeHome!\nThank you for using!\nYour temp account: name - admin, password - {tempPass}")
 finally:
-    users = mf.load("data\\users.json", 2)
+    users = mf.load(f"data{slash}users.json", 2)
 
-sett = mf.load("data\\config.toml", 1)
+sett = mf.load(f"data{slash}config.toml", 1)
 app = Flask(__name__)
 board = pyfirmata.Arduino(sett["device"]["arduinoPort"])
 
@@ -82,9 +89,9 @@ def adduser():
         if arldadd == True: return "User Arleady Logined!"
         if users[0]["name"] == "admin":
             users.remove(users[0])
-            mf.jsDump("data\\users.json", users)
+            mf.jsDump(f"data{slash}users.json", users)
         users.append({"name":username, "pass":password})
-        mf.jsDump("data\\users.json", users)
+        mf.jsDump(f"data{slash}users.json", users)
         return "True"
     return "Form None Writed!"
 
@@ -99,7 +106,7 @@ def removeuser():
             if username in users[i]["name"]: noonusers = True
         if noonusers == False: return "User Not Logined!"
         users.remove({"name":username, "pass":password})
-        mf.jsDump("data\\users.json", users)
+        mf.jsDump(f"data{slash}users.json", users)
         return "True"
     return "Form None Writed!"
 

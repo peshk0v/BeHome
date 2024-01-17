@@ -3,3 +3,4 @@ pyfirmata2
 flask
 art
 tabulate
+requests
